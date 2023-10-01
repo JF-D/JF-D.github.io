@@ -52,13 +52,13 @@ Experience
 
 **Catalyst, CMU** \\
 <span style="color: gray;">Research Intern, Apr. 2022 - May. 2023</span> \\
-Advisors: [Prof. Zhihao Jia](https://www.cs.cmu.edu/~zhihaoj2/), [Dr. Minjia Zhang](http://zhangminjia.me/), [Dr. Xupeng Miao](https://hsword.github.io/) \\
+*Advisors*: [Prof. Zhihao Jia](https://www.cs.cmu.edu/~zhihaoj2/), [Dr. Minjia Zhang](http://zhangminjia.me/), [Dr. Xupeng Miao](https://hsword.github.io/) \\
 <span style="color: #696969;">Cost-efficient DNN training and inference.</span>
 
 
 **MMLab, CUHK** \\
 <span style="color: gray;">Research Assiant, Aug. 2020 - Apr. 2022</span> \\
-Advisors: [Prof. Dahua Lin](http://dahua.site/), [Prof. Shengen Yan](https://scholar.google.com/citations?user=SvE3bdUAAAAJ&hl=en), [Prof. Xiuhong Li](https://scholar.google.com/citations?user=90eREm0AAAAJ&hl=en) \\
+*Advisors*: [Prof. Dahua Lin](http://dahua.site/), [Prof. Shengen Yan](https://scholar.google.com/citations?user=SvE3bdUAAAAJ&hl=en), [Prof. Xiuhong Li](https://scholar.google.com/citations?user=90eREm0AAAAJ&hl=en) \\
 <span style="color: #696969;">Auto parallel DNN training.</span>
 
 
