@@ -86,7 +86,7 @@ TA, CSCI2100: Data Structure, Spring 2022, CUHK
 Services
 ==
 ----
-AE PC Member: MLSys 2023
+**AEC Member**: MLSys 2023
 
 
 Awards
