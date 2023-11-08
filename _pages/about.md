@@ -68,12 +68,14 @@ Experience
 <span style="color: #696969;">Optmize large scale data parallel training performance. With sparse communication and system optimization, We train alexnet in 1 minute on a 1000 V100 cluster with parrots.</span>
 
 
-<!-- Publications
+Publications
 ==
 ----
-Stay Tuned.
+- [SpotServe: Serving Generative Large Language Models on Preemptible Instances](https://jf-d.github.io) \\
+Xupeng Miao$^{\*}$, Chunan Shi$^{\*}$, **Jiangfei Duan**, Xiaoli Xi, Dahua Lin, Bin Cui, and Zhihao Jia \\
+<span style="color: #696969;">In *Proceedings of the ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS)*, April 2024.</span>
 
-Proteus: Simulating the Performance of Distributed DNN Training -->
+<!-- Proteus: Simulating the Performance of Distributed DNN Training -->
 
 
 Teaching
