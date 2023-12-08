@@ -71,12 +71,18 @@ Experience
 Publications
 ==
 ----
-- [SpotServe: Serving Generative Large Language Models on Preemptible Instances](https://jf-d.github.io) \\
+- [Parcae: Proactive, Liveput-Optimized DNN Training on Preemptible Instances](https://jf-d.github.io) \\
+**Jiangfei Duan**$^{\*}$, Ziang Song$^{\*}$, Xupeng Miao$^{\*}$, Xiaoli Xi, Dahua Lin, Harry Xu, Minjia Zhang, and Zhihao Jia \\
+<span style="color: #696969;">In *Proceedings of the Symposium on Networked Systems Design and Implementation (NSDI)*, April 2024.</span>
+
+
+- [SpotServe: Serving Generative Large Language Models on Preemptible Instances](https://arxiv.org/abs/2311.15566) \\
 Xupeng Miao$^{\*}$, Chunan Shi$^{\*}$, **Jiangfei Duan**, Xiaoli Xi, Dahua Lin, Bin Cui, and Zhihao Jia \\
 <span style="color: #696969;">In *Proceedings of the ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS)*, April 2024.</span>
 
-<!-- Proteus: Simulating the Performance of Distributed DNN Training -->
-
+- [Simulating the Performance of Distributed DNN Training](https://arxiv.org/abs/2306.02267) \\
+**Jiangfei Duan**, Xiuhong Li, Ping Xu, Xingcheng Zhang, Shengen Yan, Yun Liang and Dahua Lin
+<span style="color: #696969;">arXiv Preprint, 2023</span>
 
 Teaching
 ==
