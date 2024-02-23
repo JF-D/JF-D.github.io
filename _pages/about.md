@@ -50,22 +50,23 @@ Experience
 ==
 ----
 
-**Catalyst, CMU** \\
-<span style="color: gray;">Research Intern, Apr. 2022 - May. 2023</span> \\
+<span style="font-size: 14pt;">**Catalyst, CMU**</span> \\
+<span style="color: gray; font-size: 12pt">*Research Intern, Apr. 2022 - May. 2023*</span> \\
 *Advisors*: [Prof. Zhihao Jia](https://www.cs.cmu.edu/~zhihaoj2/), [Dr. Minjia Zhang](http://zhangminjia.me/), [Dr. Xupeng Miao](https://hsword.github.io/) \\
 <span style="color: #696969;">Cost-efficient DNN training and inference.</span>
 
 
-**MMLab, CUHK** \\
-<span style="color: gray;">Research Assiant, Aug. 2020 - Apr. 2022</span> \\
+<span style="font-size: 14pt;">**MMLab, CUHK**</span>  \\
+<span style="color: gray; font-size: 12pt">*Research Assiant, Aug. 2020 - Apr. 2022*</span> \\
 *Advisors*: [Prof. Dahua Lin](http://dahua.site/), [Prof. Shengen Yan](https://scholar.google.com/citations?user=SvE3bdUAAAAJ&hl=en), [Prof. Xiuhong Li](https://scholar.google.com/citations?user=90eREm0AAAAJ&hl=en) \\
 <span style="color: #696969;">Auto parallel DNN training.</span>
 
-
-**SenseTime Research** \\
-<span style="color: gray;">Research Intern, July 2019 - July 2020</span> \\
+<span style="font-size: 14pt;">**MMLab, CUHK**</span>  \\
+<!-- <span style="font-size: 14pt;">**SenseTime Research**</span> \\ -->
+<span style="color: gray; font-size: 12pt">*Research Assiant, July 2019 - July 2020*</span> \\
 *Mentors*: [Prof. Dahua Lin](http://dahua.site/), Xingcheng Zhang \\
-<span style="color: #696969;">Optmize large scale data parallel training performance. With sparse communication and system optimization, We train alexnet in 1 minute on a 1000 V100 cluster with parrots.</span>
+<span style="color: #696969;">Optmize large scale data parallel training performance. With sparse communication and system optimization, We train alexnet in 1 minute on a 1000 V100 cluster with Parrots (a DL framework similar to PyTorch).</span>
+
 
 
 Publications
