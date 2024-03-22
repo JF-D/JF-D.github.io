@@ -12,6 +12,10 @@ I am a third-year Ph.D. student at [MMLab, CUHK](https://mmlab.ie.cuhk.edu.hk/pe
 
 Currently, I am working on efficient LLM serving systems. Feel free to drop me an email if you are interested in my research.
 
+News
+==
+----
+- [Apr. 2024] I will attend NSDI '24 in person at Santa Clara, CA. See you there!
 
 Education
 ==
@@ -81,7 +85,7 @@ Xupeng Miao$^{\*}$, Chunan Shi$^{\*}$, **Jiangfei Duan**, Xiaoli Xi, Dahua Lin, 
 <span style="color: #696969;">In *Proceedings of the ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS)*, April 2024.</span> \\
 <span style="color: #ff0000;">**Distinguished Artifact Award**</span>
 
-- [Parcae: Proactive, Liveput-Optimized DNN Training on Preemptible Instances](https://jf-d.github.io) \\
+- [Parcae: Proactive, Liveput-Optimized DNN Training on Preemptible Instances](https://arxiv.org/abs/2403.14097) \\
 **Jiangfei Duan**$^{\*}$, Ziang Song$^{\*}$, Xupeng Miao$^{\*}$, Xiaoli Xi, Dahua Lin, Harry Xu, Minjia Zhang, and Zhihao Jia \\
 <span style="color: #696969;">In *Proceedings of the Symposium on Networked Systems Design and Implementation (NSDI)*, April 2024.</span>
 
