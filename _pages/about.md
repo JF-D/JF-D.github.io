@@ -76,8 +76,12 @@ Experience
 Publications
 ==
 ----
+- [MuxServe: Flexible Multiplexing for Efficient Multiple LLM Serving](https://arxiv.org/abs/2404.02015) \\
+Jiangfei Duan, Runyu Lu, Haojie Duanmu, Xiuhong Li, Xingcheng Zhang, Dahua Lin, Ion Stoica, and Hao Zhang \\
+<span style="color: #696969;">arXiv Preprint, 2024</span>
+
 - [Centauri: Enabling Efficient Scheduling for Communication-Computation Overlap in Large Model Training via Communication Partitioning](https://jf-d.github.io) \\
-Chang Chen, Xiuhong Li, Qianchao Zhu, **Jiangfei Duan**, Peng Sun, Xingcheng Zhang, Chao Yang \\
+Chang Chen, Xiuhong Li, Qianchao Zhu, **Jiangfei Duan**, Peng Sun, Xingcheng Zhang, and Chao Yang \\
 <span style="color: #696969;">In *Proceedings of the ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS)*, April 2024.</span>
 
 - [SpotServe: Serving Generative Large Language Models on Preemptible Instances](https://arxiv.org/abs/2311.15566) \\
@@ -90,7 +94,7 @@ Xupeng Miao$^{\*}$, Chunan Shi$^{\*}$, **Jiangfei Duan**, Xiaoli Xi, Dahua Lin, 
 <span style="color: #696969;">In *Proceedings of the Symposium on Networked Systems Design and Implementation (NSDI)*, April 2024.</span>
 
 - [Simulating the Performance of Distributed DNN Training](https://arxiv.org/abs/2306.02267) \\
-**Jiangfei Duan**, Xiuhong Li, Ping Xu, Xingcheng Zhang, Shengen Yan, Yun Liang and Dahua Lin \\
+**Jiangfei Duan**, Xiuhong Li, Ping Xu, Xingcheng Zhang, Shengen Yan, Yun Liang, and Dahua Lin \\
 <span style="color: #696969;">arXiv Preprint, 2023</span>
 
 Teaching
