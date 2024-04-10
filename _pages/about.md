@@ -12,6 +12,8 @@ I am a third-year Ph.D. student at [MMLab, CUHK](https://mmlab.ie.cuhk.edu.hk/pe
 
 Currently, I am working on efficient LLM serving systems. Feel free to drop me an email if you are interested in my research.
 
+My detailed CV can be found [here](https://jf-d.github.io/cv.pdf).
+
 News
 ==
 ----
@@ -84,16 +86,16 @@ Jiangfei Duan, Runyu Lu, Haojie Duanmu, Xiuhong Li, Xingcheng Zhang, Dahua Lin, 
 Chang Chen, Xiuhong Li, Qianchao Zhu, **Jiangfei Duan**, Peng Sun, Xingcheng Zhang, and Chao Yang \\
 <span style="color: #696969;">In *Proceedings of the ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS)*, April 2024.</span>
 
-- [SpotServe: Serving Generative Large Language Models on Preemptible Instances](https://arxiv.org/abs/2311.15566) \\
+- [SpotServe: Serving Generative Large Language Models on Preemptible Instances](https://arxiv.org/abs/2311.15566), [Code](https://github.com/Hsword/SpotServe){: style="color: blue"} \\
 Xupeng Miao$^{\*}$, Chunan Shi$^{\*}$, **Jiangfei Duan**, Xiaoli Xi, Dahua Lin, Bin Cui, and Zhihao Jia \\
 <span style="color: #696969;">In *Proceedings of the ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS)*, April 2024.</span> \\
 <span style="color: #ff0000;">**Distinguished Artifact Award**</span>
 
-- [Parcae: Proactive, Liveput-Optimized DNN Training on Preemptible Instances](https://arxiv.org/abs/2403.14097) \\
+- [Parcae: Proactive, Liveput-Optimized DNN Training on Preemptible Instances](https://arxiv.org/abs/2403.14097), [Code](https://github.com/JF-D/Parcae){: style="color: blue"} \\
 **Jiangfei Duan**$^{\*}$, Ziang Song$^{\*}$, Xupeng Miao$^{\*}$, Xiaoli Xi, Dahua Lin, Harry Xu, Minjia Zhang, and Zhihao Jia \\
 <span style="color: #696969;">In *Proceedings of the Symposium on Networked Systems Design and Implementation (NSDI)*, April 2024.</span>
 
-- [Simulating the Performance of Distributed DNN Training](https://arxiv.org/abs/2306.02267) \\
+- [Simulating the Performance of Distributed DNN Training](https://arxiv.org/abs/2306.02267), [Code](https://github.com/JF-D/Proteus){: style="color: blue"} \\
 **Jiangfei Duan**, Xiuhong Li, Ping Xu, Xingcheng Zhang, Shengen Yan, Yun Liang, and Dahua Lin \\
 <span style="color: #696969;">arXiv Preprint, 2023</span>
 
