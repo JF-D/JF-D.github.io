@@ -10,7 +10,10 @@ redirect_from:
 
 I am a third-year Ph.D. student at [MMLab, CUHK](https://mmlab.ie.cuhk.edu.hk/people.html), advised by [Prof. Dahua Lin](http://dahua.site/). My research interests lie in broad area of MLSys, especially efficient large scale DNN training and inference. Before joining CUHK, I received my Bachelor's degree in Computer Science from [University of Chinese Academy of Sciences](https://english.ucas.ac.cn/), advised by [Prof. Shiguang Shan](https://scholar.google.com/citations?user=Vkzd7MIAAAAJ&hl=zh-CN).
 
-Currently, I am working on efficient LLM serving systems. Feel free to drop me an email if you are interested in my research.
+<!-- Currently, I am working on efficient LLM serving systems. Feel free to drop me an email if you are interested in my research. -->
+
+<!-- <span style="color: red">I will be on the job market for 2025. Please feel free to reach out if you have openings in industry or academia.</span> -->
+<span style="color: red">I will be on the job market for 2025. Please feel free to reach out if you have openings in industry or academia.</span>
 
 My detailed CV can be found [here](https://jf-d.github.io/files/cv.pdf).
 
@@ -85,7 +88,8 @@ Jiangfei Duan, Runyu Lu, Haojie Duanmu, Xiuhong Li, Xingcheng Zhang, Dahua Lin, 
 
 - <span style="color: #CC2221;">Centauri: Enabling Efficient Scheduling for Communication-Computation Overlap in Large Model Training via Communication Partitioning</span> \\
 Chang Chen, Xiuhong Li, Qianchao Zhu, **Jiangfei Duan**, Peng Sun, Xingcheng Zhang, and Chao Yang \\
-<span style="color: #696969;">In *Proceedings of the ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS)*, April 2024.</span>
+<span style="color: #696969;">In *Proceedings of the ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS)*, April 2024.</span> \\
+<span style="color: #ff0000;">**Best Paper Award**</span>
 
 - <span style="color: #CC2221;">SpotServe: Serving Generative Large Language Models on Preemptible Instances</span> \\
 Xupeng Miao$^{\*}$, Chunan Shi$^{\*}$, **Jiangfei Duan**, Xiaoli Xi, Dahua Lin, Bin Cui, and Zhihao Jia \\
@@ -119,11 +123,12 @@ Services
 Awards
 ==
 ----
-
-First-class Academic Scholarship, UCAS (top 5%), 2017,2018 \\
-Tang Lixin Scholarship, 2019 \\
+Best Paper Award, ASPLOS 2024 \\
+Distinguished Artifact Award, ASPLOS 2024 \\
 Outstanding Graduate of Beijing, 2020 \\
-Outstanding Graduate of University of Chinese Academy of Sciences, 2020
+Outstanding Graduate of University of Chinese Academy of Sciences, 2020 \\
+Tang Lixin Scholarship, 2019 \\
+First-class Academic Scholarship, UCAS (top 5%), 2017,2018
 
 
 <div style="display: flex; justify-content: center;">
