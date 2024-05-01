@@ -81,6 +81,7 @@ Experience
 Publications
 ==
 ----
+<!-- #CC2221 -->
 - <span style="color: #d2691e;">MuxServe: Flexible Multiplexing for Efficient Multiple LLM Serving</span> \\
 Jiangfei Duan, Runyu Lu, Haojie Duanmu, Xiuhong Li, Xingcheng Zhang, Dahua Lin, Ion Stoica, and Hao Zhang \\
 <span style="color: #696969;">arXiv Preprint, 2024</span> \\
@@ -89,20 +90,21 @@ Jiangfei Duan, Runyu Lu, Haojie Duanmu, Xiuhong Li, Xingcheng Zhang, Dahua Lin, 
 - <span style="color: #d2691e;">Centauri: Enabling Efficient Scheduling for Communication-Computation Overlap in Large Model Training via Communication Partitioning</span> \\
 Chang Chen, Xiuhong Li, Qianchao Zhu, **Jiangfei Duan**, Peng Sun, Xingcheng Zhang, and Chao Yang \\
 <span style="color: #696969;">In *Proceedings of the ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS)*, April 2024.</span> \\
-<span style="color: #ff0000;">**Best Paper Award**</span>
+<span style="color: #ff0000;">**Best Paper Award**</span> \\
+[[Paper](https://dl.acm.org/doi/10.1145/3620666.3651379)]
 
 - <span style="color: #d2691e;">SpotServe: Serving Generative Large Language Models on Preemptible Instances</span> \\
 Xupeng Miao$^{\*}$, Chunan Shi$^{\*}$, **Jiangfei Duan**, Xiaoli Xi, Dahua Lin, Bin Cui, and Zhihao Jia \\
 <span style="color: #696969;">In *Proceedings of the ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS)*, April 2024.</span> \\
 <span style="color: #ff0000;">**Distinguished Artifact Award**</span> \\
-[[Paper](https://arxiv.org/abs/2311.15566)], [[Code](https://github.com/Hsword/SpotServe)]
+[[Paper](https://dl.acm.org/doi/10.1145/3620665.3640411)], [[Code](https://github.com/Hsword/SpotServe)]
 
 - <span style="color: #d2691e;">Parcae: Proactive, Liveput-Optimized DNN Training on Preemptible Instances</span> \\
 **Jiangfei Duan**$^{\*}$, Ziang Song$^{\*}$, Xupeng Miao$^{\*}$, Xiaoli Xi, Dahua Lin, Harry Xu, Minjia Zhang, and Zhihao Jia \\
 <span style="color: #696969;">In *Proceedings of the Symposium on Networked Systems Design and Implementation (NSDI)*, April 2024.</span> \\
-[[Paper](https://arxiv.org/abs/2403.14097)], [[Code](https://github.com/JF-D/Parcae)]
+[[Paper](https://www.usenix.org/conference/nsdi24/presentation/duan)], [[Code](https://github.com/JF-D/Parcae)]
 
-- <span style="color: #d2691e;">Simulating the Performance of Distributed DNN Training</span> \\
+- <span style="color: #d2691e;">Proteus: Simulating the Performance of Distributed DNN Training</span> \\
 **Jiangfei Duan**, Xiuhong Li, Ping Xu, Xingcheng Zhang, Shengen Yan, Yun Liang, and Dahua Lin \\
 <span style="color: #696969;">arXiv Preprint, 2023</span> \\
 [[Paper](https://arxiv.org/abs/2306.02267)], [[Code](https://github.com/JF-D/Proteus)]
@@ -117,7 +119,7 @@ TA, CSCI2100: Data Structure, Spring 2022, CUHK
 Services
 ==
 ----
-**AEC Member**: MLSys 2023
+**AEC Member**: MLSys 2023, OSDI 2024, ATC 2024
 
 
 Awards
