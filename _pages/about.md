@@ -83,6 +83,11 @@ Publications
 ==
 ----
 <!-- #CC2221 -->
+- <span style="color: #d2691e;">Near-Lossless Acceleration of Long Context LLM Inference with Adaptive Structured Sparse Attention</span> \\
+Qianchao Zhu, **Jiangfei Duan**, Chang Chen, Siran Liu, Xiuhong Li, Guanyu Feng, Xin Lv, Huanqi Cao, Chuanfu Xiao, Xingcheng Zhang, Dahua Lin, and Chao Yang \\
+<span style="color: #696969;">arXiv Preprint, 2024</span> \\
+[[Paper](https://www.arxiv.org/abs/2406.15486)]
+
 - <span style="color: #d2691e;">SKVQ: Sliding-window Key and Value Cache Quantization for Large Language Models</span> \\
 Haojie Duanmu, Zhihang Yuan, Xiuhong Li, **Jiangfei Duan**, Xingcheng Zhang, and Dahua Lin \\
 <span style="color: #696969;">arXiv Preprint, 2024</span> \\
