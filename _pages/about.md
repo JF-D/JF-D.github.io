@@ -93,8 +93,7 @@ Haojie Duanmu, Zhihang Yuan, Xiuhong Li, **Jiangfei Duan**, Xingcheng Zhang, and
 <span style="color: #696969;">arXiv Preprint, 2024</span> \\
 [[Paper](https://www.arxiv.org/abs/2405.06219)]
 
-
-- <span style="color: #d2691e;">MuxServe: Flexible Multiplexing for Efficient Multiple LLM Serving</span> \\
+- <span style="color: #d2691e;">MuxServe: Flexible Spatial-Temporal Multiplexing for Multiple LLM Serving</span> \\
 **Jiangfei Duan**, Runyu Lu, Haojie Duanmu, Xiuhong Li, Xingcheng Zhang, Dahua Lin, Ion Stoica, and Hao Zhang \\
 <span style="color: #696969;">In *Proceedings of the International Conference on Machine Learning (ICML)*, July 2024.</span> \\
 [[Paper](https://arxiv.org/abs/2404.02015)], [[Code](https://github.com/hao-ai-lab/MuxServe)], [[Blog](https://hao-ai-lab.github.io/blogs/muxserve/)], [[Video (Chinese)](https://www.youtube.com/watch?v=3jL6CL_uVa0&t=199s&ab_channel=MLSysSingapore)]
