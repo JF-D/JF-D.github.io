@@ -96,13 +96,13 @@ Haojie Duanmu, Zhihang Yuan, Xiuhong Li, **Jiangfei Duan**, Xingcheng Zhang, and
 - <span style="color: #d2691e;">MuxServe: Flexible Spatial-Temporal Multiplexing for Multiple LLM Serving</span> \\
 **Jiangfei Duan**, Runyu Lu, Haojie Duanmu, Xiuhong Li, Xingcheng Zhang, Dahua Lin, Ion Stoica, and Hao Zhang \\
 <span style="color: #696969;">In *Proceedings of the International Conference on Machine Learning (ICML)*, July 2024.</span> \\
-[[Paper](https://arxiv.org/abs/2404.02015)], [[Code](https://github.com/hao-ai-lab/MuxServe)], [[Blog](https://hao-ai-lab.github.io/blogs/muxserve/)], [[Video (Chinese)](https://www.youtube.com/watch?v=3jL6CL_uVa0&t=199s&ab_channel=MLSysSingapore)]
+[[Paper](https://arxiv.org/abs/2404.02015)], [[Code](https://github.com/hao-ai-lab/MuxServe)], [[Blog](https://hao-ai-lab.github.io/blogs/muxserve/)], [[Video (Chinese)](https://youtu.be/3jL6CL_uVa0?si=zBqeeYlaKQsItKAg)]
 
 - <span style="color: #d2691e;">Centauri: Enabling Efficient Scheduling for Communication-Computation Overlap in Large Model Training via Communication Partitioning</span> \\
 Chang Chen, Xiuhong Li, Qianchao Zhu, **Jiangfei Duan**, Peng Sun, Xingcheng Zhang, and Chao Yang \\
 <span style="color: #696969;">In *Proceedings of the ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS)*, April 2024.</span> \\
 <span style="color: #ff0000;">**Best Paper Award**</span> \\
-[[Paper](https://dl.acm.org/doi/10.1145/3620666.3651379)]
+[[Paper](https://dl.acm.org/doi/10.1145/3620666.3651379)], [[Video (Chinese)](https://youtu.be/lpKzMAkQYNs?si=xoD0quGWDhwlngW_)]
 
 - <span style="color: #d2691e;">SpotServe: Serving Generative Large Language Models on Preemptible Instances</span> \\
 Xupeng Miao$^{\*}$, Chunan Shi$^{\*}$, **Jiangfei Duan**, Xiaoli Xi, Dahua Lin, Bin Cui, and Zhihao Jia \\
