@@ -20,6 +20,7 @@ My detailed CV can be found [here](https://jf-d.github.io/files/cv.pdf).
 News
 ==
 ----
+- [July 2024] SKVQ is accepted by COLM 2024. Congratulations to Duanmu!
 - [May  2024] MuxServe is accepted by ICML 2024!
 - [Apr. 2024] I will attend NSDI '24 in person at Santa Clara, CA. See you there!
 
@@ -90,7 +91,7 @@ Qianchao Zhu, **Jiangfei Duan**, Chang Chen, Siran Liu, Xiuhong Li, Guanyu Feng,
 
 - <span style="color: #d2691e;">SKVQ: Sliding-window Key and Value Cache Quantization for Large Language Models</span> \\
 Haojie Duanmu, Zhihang Yuan, Xiuhong Li, **Jiangfei Duan**, Xingcheng Zhang, and Dahua Lin \\
-<span style="color: #696969;">arXiv Preprint, 2024</span> \\
+<span style="color: #696969;">In *Proceedings of the Conference on Language Modeling (COLM)*, October 2024.</span> \\
 [[Paper](https://www.arxiv.org/abs/2405.06219)]
 
 - <span style="color: #d2691e;">MuxServe: Flexible Spatial-Temporal Multiplexing for Multiple LLM Serving</span> \\
