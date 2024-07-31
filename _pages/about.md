@@ -20,6 +20,7 @@ My detailed CV can be found [here](https://jf-d.github.io/files/cv.pdf).
 News
 ==
 ----
+- [July 2024] We announce a survey about LLM training system and infra, check [arXiv](https://arxiv.org/abs/2407.20018)!
 - [July 2024] SKVQ is accepted by COLM 2024. Congratulations to Duanmu!
 - [May  2024] MuxServe is accepted by ICML 2024!
 - [Apr. 2024] I will attend NSDI '24 in person at Santa Clara, CA. See you there!
@@ -120,6 +121,13 @@ Xupeng Miao$^{\*}$, Chunan Shi$^{\*}$, **Jiangfei Duan**, Xiaoli Xi, Dahua Lin, 
 **Jiangfei Duan**, Xiuhong Li, Ping Xu, Xingcheng Zhang, Shengen Yan, Yun Liang, and Dahua Lin \\
 <span style="color: #696969;">arXiv Preprint, 2023</span> \\
 [[Paper](https://arxiv.org/abs/2306.02267)], [[Code](https://github.com/JF-D/Proteus)]
+
+**Survey**
+
+- <span style="color: #d2691e;">Efficient Training of Large Language Models on Distributed Infrastructures: A Survey</span> \\
+**Jiangfei Duan**$^{\*}$, Shuo Zhang$^{\*}$, Zerui Wang$^{\*}$, Lijuan Jiang, Wenwen Qu, Qinghao Hu, Guoteng Wang, Qizhen Weng, Hang Yan, Xingcheng Zhang, Xipeng Qiu, Dahua Lin, Yonggang Wen, Xin Jin, Tianwei Zhang, and Peng Sun \\
+<span style="color: #696969;">arXiv Preprint, 2024</span> \\
+[[Paper](https://arxiv.org/abs/2407.20018)]
 
 Teaching
 ==
