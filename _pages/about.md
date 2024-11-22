@@ -94,7 +94,7 @@ Publications
 
 - <span style="color: #211106;">SKVQ: Sliding-window Key and Value Cache Quantization for Large Language Models</span> \\
 <span style="color: #9c948f;">Haojie Duanmu, Zhihang Yuan, Xiuhong Li,</span> **Jiangfei Duan**<span style="color: #9c948f;">, Xingcheng Zhang, and Dahua Lin</span> \\
-<span style="color: #696969;">In *Proceedings of the Conference on Language Modeling (COLM)*, October 2024.</span> \\
+<span style="color: #696969;">In *Proceedings of the Conference on Language Modeling (COLM <span style="color: #ff0000;">Spotlight</span>)*, October 2024.</span> \\
 [[Paper](https://www.arxiv.org/abs/2405.06219)]
 
 - <span style="color: #211106;">MuxServe: Flexible Spatial-Temporal Multiplexing for Multiple LLM Serving</span> \\
@@ -106,7 +106,7 @@ Publications
 <span style="color: #9c948f;">Chang Chen, Xiuhong Li, Qianchao Zhu,</span> **Jiangfei Duan**<span style="color: #9c948f;">, Peng Sun, Xingcheng Zhang, and Chao Yang</span> \\
 <span style="color: #696969;">In *Proceedings of the ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS)*, April 2024.</span> \\
 <span style="color: #ff0000;">**Best Paper Award**</span> \\
-[[Paper](https://dl.acm.org/doi/10.1145/3620666.3651379)], [[Video (Chinese)](https://youtu.be/lpKzMAkQYNs?si=xoD0quGWDhwlngW_)]
+[[Paper](https://jf-d.github.io/files/Centauri.pdf)], [[Video (Chinese)](https://youtu.be/lpKzMAkQYNs?si=xoD0quGWDhwlngW_)]
 
 - <span style="color: #211106;">SpotServe: Serving Generative Large Language Models on Preemptible Instances</span> \\
 <span style="color: #9c948f;">Xupeng Miao$^{\*}$, Chunan Shi$^{\*}$,</span> Jiangfei Duan<span style="color: #9c948f;">, Xiaoli Xi, Dahua Lin, Bin Cui, and Zhihao Jia</span> \\
