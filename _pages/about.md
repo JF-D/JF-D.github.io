@@ -87,9 +87,15 @@ Publications
 ==
 ----
 <!-- #CC2221 -->
-- <span style="color: #211106;">Near-Lossless Acceleration of Long Context LLM Inference with Adaptive Structured Sparse Attention</span> \\
-<span style="color: #9c948f;">Qianchao Zhu,</span> **Jiangfei Duan**<span style="color: #9c948f;">, Chang Chen, Siran Liu, Xiuhong Li, Guanyu Feng, Xin Lv, Huanqi Cao, Chuanfu Xiao, Xingcheng Zhang, Dahua Lin, and Chao Yang</span> \\
-<span style="color: #696969;">arXiv Preprint, 2024</span> \\
+
+- <span style="color: #211106;">MxMoE: Mixed-precision Quantization for MoE with Accuracy and Performance Co-Design (ICML ’25)</span> \\
+<span style="color: #9c948f;">Haojie Duanmu, Xiuhong Li, Zhihang Yuan, Size Zheng</span> **Jiangfei Duan**$^{\*}$<span style="color: #9c948f;">, Xingcheng Zhang, and Dahua Lin</span> \\
+<span style="color: #696969;">In *Proceedings of the International Conference on Machine Learning (ICML)*, July 2025.</span> \\
+[[Paper](https://www.arxiv.org/abs/2406.15486)]
+
+- <span style="color: #211106;">SampleAttention: Near-Lossless Acceleration of Long Context LLM Inference with Adaptive Structured Sparse Attention</span> \\
+<span style="color: #9c948f;">Qianchao Zhu$^{\*}$,</span> **Jiangfei Duan**$^{\*}$<span style="color: #9c948f;">, Chang Chen, Siran Liu, Xiuhong Li, Guanyu Feng, Xin Lv, Huanqi Cao, Chuanfu Xiao, Xingcheng Zhang, Dahua Lin, and Chao Yang</span> \\
+<span style="color: #696969;">In *Proceedings of the Conference on Machine Learning and Systems (MLSys)*, May 2025.</span> \\
 [[Paper](https://www.arxiv.org/abs/2406.15486)]
 
 - <span style="color: #211106;">SKVQ: Sliding-window Key and Value Cache Quantization for Large Language Models</span> \\
@@ -112,6 +118,7 @@ Publications
 <span style="color: #9c948f;">Xupeng Miao$^{\*}$, Chunan Shi$^{\*}$,</span> Jiangfei Duan<span style="color: #9c948f;">, Xiaoli Xi, Dahua Lin, Bin Cui, and Zhihao Jia</span> \\
 <span style="color: #696969;">In *Proceedings of the ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS)*, April 2024.</span> \\
 <span style="color: #ff0000;">**Distinguished Artifact Award**</span> \\
+<span style="color: #ff0000;">**IEEE Micro Top Picks Honorable Mention**</span> \\
 [[Paper](https://dl.acm.org/doi/10.1145/3620665.3640411)], [[Code](https://github.com/Hsword/SpotServe)]
 
 - <span style="color: #211106;">Parcae: Proactive, Liveput-Optimized DNN Training on Preemptible Instances</span> \\
