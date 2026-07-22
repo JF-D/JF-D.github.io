@@ -1,6 +1,8 @@
-import { cp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
+import { cp, mkdir, readdir, readFile, rm, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
+
+import { marked, Renderer } from "marked";
 
 import { publications } from "../src/data/publications.mjs";
 import { site } from "../src/data/site.mjs";
@@ -8,6 +10,8 @@ import { site } from "../src/data/site.mjs";
 const rootDir = fileURLToPath(new URL("..", import.meta.url));
 const publicDir = path.join(rootDir, "public");
 const distDir = path.join(rootDir, "dist");
+const blogPostsDir = path.join(rootDir, "src/blog/posts");
+const blogSlugPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
 function escapeHtml(value) {
   return String(value)
@@ -16,6 +20,169 @@ function escapeHtml(value) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#39;");
+}
+
+function isValidIsoDate(value) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
+  const parsed = new Date(`${value}T00:00:00Z`);
+  return !Number.isNaN(parsed.valueOf()) && parsed.toISOString().startsWith(value);
+}
+
+function formatBlogDate(date) {
+  return new Intl.DateTimeFormat("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    timeZone: "UTC",
+  }).format(new Date(`${date}T00:00:00Z`));
+}
+
+function validateBlogMetadata(slug, metadata) {
+  const source = `Blog post "${slug}"`;
+  if (!blogSlugPattern.test(slug)) {
+    throw new Error(`${source} must use a lowercase, hyphen-separated directory name.`);
+  }
+  if (typeof metadata.title !== "string" || metadata.title.trim() === "") {
+    throw new Error(`${source} requires a non-empty metadata title.`);
+  }
+  if (typeof metadata.summary !== "string" || metadata.summary.trim() === "") {
+    throw new Error(`${source} requires a non-empty metadata summary.`);
+  }
+  if (typeof metadata.date !== "string" || !isValidIsoDate(metadata.date)) {
+    throw new Error(`${source} requires a valid metadata date in YYYY-MM-DD format.`);
+  }
+  if (metadata.draft !== undefined && typeof metadata.draft !== "boolean") {
+    throw new Error(`${source} metadata draft must be true or false.`);
+  }
+}
+
+function isExternalOrRootImage(href) {
+  return href.startsWith("/") || href.startsWith("//") || /^[a-z][a-z0-9+.-]*:/i.test(href);
+}
+
+async function resolveBlogImage(postDir, slug, href) {
+  if (isExternalOrRootImage(href)) return null;
+
+  let relativePath;
+  try {
+    relativePath = decodeURIComponent(href.split(/[?#]/, 1)[0]);
+  } catch {
+    throw new Error(`Blog post "${slug}" has an invalid image path: ${href}`);
+  }
+
+  const sourcePath = path.resolve(postDir, relativePath);
+  if (!relativePath || !sourcePath.startsWith(`${postDir}${path.sep}`)) {
+    throw new Error(`Blog post "${slug}" image paths must stay inside the post directory: ${href}`);
+  }
+
+  let imageStat;
+  try {
+    imageStat = await stat(sourcePath);
+  } catch {
+    throw new Error(`Blog post "${slug}" references a missing image: ${href}`);
+  }
+  if (!imageStat.isFile()) {
+    throw new Error(`Blog post "${slug}" image must reference a file: ${href}`);
+  }
+
+  return { relativePath: path.relative(postDir, sourcePath), sourcePath };
+}
+
+async function readBlogPost(directoryEntry) {
+  const slug = directoryEntry.name;
+  const postDir = path.join(blogPostsDir, slug);
+  const [metadataSource, markdown] = await Promise.all([
+    readFile(path.join(postDir, "metadata.json"), "utf8"),
+    readFile(path.join(postDir, "post.md"), "utf8"),
+  ]);
+
+  let metadata;
+  try {
+    metadata = JSON.parse(metadataSource);
+  } catch (error) {
+    throw new Error(`Blog post "${slug}" has invalid metadata.json: ${error.message}`);
+  }
+  validateBlogMetadata(slug, metadata);
+
+  const imageReferences = [];
+  const markdownErrors = [];
+  const renderer = new Renderer();
+  renderer.image = ({ href, text, title }) => {
+    const titleAttribute = title ? ` title="${escapeHtml(title)}"` : "";
+    return `<img src="${escapeHtml(href)}" alt="${escapeHtml(text)}"${titleAttribute} loading="lazy" decoding="async" />`;
+  };
+  const html = marked.parse(markdown, {
+    gfm: true,
+    breaks: false,
+    renderer,
+    walkTokens(token) {
+      if (token.type === "html") {
+        markdownErrors.push(`Blog post "${slug}" contains raw HTML, which is not supported.`);
+      }
+      if (token.type === "heading" && token.depth === 1) {
+        markdownErrors.push(
+          `Blog post "${slug}" must use metadata for its title; start Markdown headings at ##.`,
+        );
+      }
+      if (token.type === "image") {
+        if (token.text.trim() === "") {
+          markdownErrors.push(`Blog post "${slug}" has an image without descriptive alt text.`);
+        }
+        imageReferences.push(token.href);
+      }
+    },
+  });
+  if (markdownErrors.length > 0) throw new Error(markdownErrors.join("\n"));
+
+  const imageFiles = (
+    await Promise.all([...new Set(imageReferences)].map((href) => resolveBlogImage(postDir, slug, href)))
+  ).filter(Boolean);
+
+  return {
+    ...metadata,
+    draft: metadata.draft ?? false,
+    html,
+    imageFiles,
+    route: `/blog/${slug}/`,
+    slug,
+  };
+}
+
+async function readBlogPosts() {
+  const entries = await readdir(blogPostsDir, { withFileTypes: true });
+  const postDirectories = entries.filter(
+    (entry) => entry.isDirectory() && !entry.name.startsWith(".") && !entry.name.startsWith("_"),
+  );
+  const posts = await Promise.all(postDirectories.map(readBlogPost));
+
+  return posts
+    .filter((post) => !post.draft)
+    .sort((left, right) => right.date.localeCompare(left.date) || left.slug.localeCompare(right.slug));
+}
+
+function renderBlogIndex(posts) {
+  if (posts.length === 0) return '<p class="empty-state">No posts yet.</p>';
+
+  return `<ol class="blog-list">
+${posts
+  .map(
+    (post) => `<li class="blog-list__item">
+  <article>
+    <h2 class="blog-list__title"><a href="${escapeHtml(post.route)}">${escapeHtml(post.title)}</a></h2>
+    <time class="blog-list__date" datetime="${escapeHtml(post.date)}">${escapeHtml(formatBlogDate(post.date))}</time>
+    <p class="blog-list__summary">${escapeHtml(post.summary)}</p>
+  </article>
+</li>`,
+  )
+  .join("\n")}
+</ol>`;
+}
+
+function renderBlogPost(post) {
+  return `<p class="blog-post__date"><time datetime="${escapeHtml(post.date)}">${escapeHtml(formatBlogDate(post.date))}</time></p>
+<div class="blog-post__body">
+${post.html}
+</div>`;
 }
 
 function renderAuthors(authors) {
@@ -122,7 +289,8 @@ function renderNavigation(route) {
   return site.navigation
     .map((item) => {
       const title = item.title ? ` title="${escapeHtml(item.title)}"` : "";
-      const current = item.activeRoute === route ? ' aria-current="page"' : "";
+      const isCurrent = item.activeRoute === route || (item.activePrefix && route.startsWith(item.activePrefix));
+      const current = isCurrent ? ' aria-current="page"' : "";
       const sectionId = item.href.startsWith("/#") ? item.href.slice(2) : "";
       const section = sectionId ? ` data-section-link="${escapeHtml(sectionId)}"` : "";
       const home = item.href === "/" ? " data-home-link" : "";
@@ -131,7 +299,7 @@ function renderNavigation(route) {
     .join("\n            ");
 }
 
-function renderLayout({ title, description, route, content }) {
+function renderLayout({ title, description, route, content, pageType = "website", publishedDate }) {
   const canonical = new URL(route, site.url).toString();
   const pageTitle = `${title} - ${site.title}`;
   const person = JSON.stringify({
@@ -149,12 +317,13 @@ function renderLayout({ title, description, route, content }) {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="${escapeHtml(description)}" />
     <meta name="theme-color" content="#ffffff" />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="${escapeHtml(pageType)}" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="${escapeHtml(site.title)}" />
     <meta property="og:title" content="${escapeHtml(title)}" />
     <meta property="og:description" content="${escapeHtml(description)}" />
     <meta property="og:url" content="${escapeHtml(canonical)}" />
+    ${publishedDate ? `<meta property="article:published_time" content="${escapeHtml(publishedDate)}" />` : ""}
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@jiangfeiduan" />
     <link rel="canonical" href="${escapeHtml(canonical)}" />
@@ -285,16 +454,36 @@ async function writePage(relativePath, options) {
   await writeFile(outputPath, renderLayout(options));
 }
 
+async function writeBlogPost(post) {
+  await writePage(path.join("blog", post.slug, "index.html"), {
+    title: post.title,
+    description: post.summary,
+    route: post.route,
+    content: renderBlogPost(post),
+    pageType: "article",
+    publishedDate: post.date,
+  });
+
+  await Promise.all(
+    post.imageFiles.map(async (image) => {
+      const outputPath = path.join(distDir, "blog", post.slug, image.relativePath);
+      await mkdir(path.dirname(outputPath), { recursive: true });
+      await cp(image.sourcePath, outputPath);
+    }),
+  );
+}
+
 export async function build() {
   await rm(distDir, { recursive: true, force: true });
   await cp(publicDir, distDir, { recursive: true });
 
   const publicationList = renderPublicationList();
-  const [homeTemplate, blogContent] = await Promise.all([
+  const [homeTemplate, blogPosts] = await Promise.all([
     readFile(path.join(rootDir, "src/content/home.html"), "utf8"),
-    readFile(path.join(rootDir, "src/content/blog.html"), "utf8"),
+    readBlogPosts(),
   ]);
   const homeContent = homeTemplate.replace("<!-- PUBLICATIONS -->", publicationList);
+  const blogContent = renderBlogIndex(blogPosts);
 
   await Promise.all([
     writePage("index.html", {
@@ -327,9 +516,13 @@ export async function build() {
       route: "/404.html",
       content: '<p>Sorry, this page does not exist.</p><p><a href="/">Return to the homepage</a>.</p>',
     }),
+    ...blogPosts.map(writeBlogPost),
   ]);
 
-  console.log(`Built ${publications.length} publications and 5 pages in ${path.relative(process.cwd(), distDir) || "dist"}/`);
+  const pageCount = 5 + blogPosts.length;
+  console.log(
+    `Built ${publications.length} publications, ${blogPosts.length} blog posts, and ${pageCount} pages in ${path.relative(process.cwd(), distDir) || "dist"}/`,
+  );
 }
 
 const isDirectRun = process.argv[1] && pathToFileURL(path.resolve(process.argv[1])).href === import.meta.url;

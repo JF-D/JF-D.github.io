@@ -10,5 +10,8 @@
     "dev": "node scripts/dev.mjs",
     "build": "node scripts/build.mjs",
     "preview": "node scripts/dev.mjs --no-watch"
+  },
+  "devDependencies": {
+    "marked": "18.0.7"
   }
 }

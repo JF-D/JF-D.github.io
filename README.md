@@ -1,18 +1,19 @@
 # Jiangfei Duan's Homepage
 
-A zero-dependency static website generated with Node.js. There are no npm packages to install and no Ruby, Jekyll, framework, database, or container requirements.
+A static website generated with Node.js. It uses one pinned build-time package for Markdown and has no browser framework, Ruby, Jekyll, database, or container requirements.
 
 ## Requirements
 
 - Git
 - Node.js 24 LTS (`.nvmrc` pins the version)
 
-`npm` is included with Node.js and is used only to run the local scripts.
+`npm` is included with Node.js.
 
 ## Local development
 
 ```bash
 nvm use
+npm ci
 npm run dev
 ```
 
@@ -30,12 +31,13 @@ If Node was installed with Homebrew as `node@24`, add it to the current shell fi
 export PATH="$(brew --prefix node@24)/bin:$PATH"
 ```
 
-No `npm install` or `npm ci` step is required.
+Run `npm ci` after cloning the repository or when `package-lock.json` changes. It installs only the
+pinned Markdown build dependency.
 
 ## Content updates
 
 - Biography, news, education, experience, teaching, services, and awards: `src/content/home.html`
-- Blog page: `src/content/blog.html`
+- Blog posts and their images: `src/blog/posts/`
 - Publications: `src/data/publications.mjs`
 - Profile, top navigation, and social links: `src/data/site.mjs`
 - Styling: `public/assets/css/site.css`
@@ -54,6 +56,38 @@ Jiangfei's author entry to bold the name, and add `equal: true` only when the pa
 that author as an equal contributor. To emphasize part of a venue inline, set `venue` to an object
 with `before`, `highlight`, and `after` strings instead of a single string.
 
+## Blog posts
+
+Each post lives in its own lowercase, hyphen-separated directory:
+
+```text
+src/blog/posts/efficient-ai-infra/
+|-- metadata.json
+|-- post.md
+`-- architecture.webp
+```
+
+`metadata.json` contains the information used by the Blog index:
+
+```json
+{
+  "title": "Building Efficient AI Infrastructure",
+  "date": "2026-08-01",
+  "summary": "Notes on training and inference infrastructure.",
+  "draft": false
+}
+```
+
+Write the body in `post.md`. The page title comes from `metadata.json`, so Markdown headings start at
+`##`. Raw HTML is intentionally rejected. Add a local image with descriptive alternative text:
+
+```markdown
+![Architecture of the training system](./architecture.webp)
+```
+
+Local images must remain inside the post directory. Only referenced images are copied to the generated
+site. Published posts are sorted newest-first; set `"draft": true` to keep a post out of the generated site.
+
 Generate the production site in `dist/`:
 
 ```bash
@@ -68,7 +102,9 @@ npm run preview
 
 ## Deployment
 
-Pushing to `master` runs `.github/workflows/deploy.yml` and publishes the generated `dist/` directory to GitHub Pages. The workflow installs no npm packages. In the repository's **Settings > Pages**, set **Source** to **GitHub Actions** once; generated files do not need to be committed.
+Pushing to `master` runs `.github/workflows/deploy.yml`, installs the locked build dependency with
+`npm ci`, and publishes the generated `dist/` directory to GitHub Pages. In the repository's
+**Settings > Pages**, set **Source** to **GitHub Actions** once; generated files do not need to be committed.
 
 ## Attribution
 

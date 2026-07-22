@@ -15,7 +15,7 @@ export const site = {
     { label: "Experience", href: "/#experience" },
     { label: "Publications", href: "/#publications" },
     { label: "Services", href: "/#services" },
-    { label: "Blog", href: "/blog/", activeRoute: "/blog/" },
+    { label: "Blog", href: "/blog/", activePrefix: "/blog/" },
   ],
   social: {
     twitter: "https://twitter.com/jiangfeiduan",

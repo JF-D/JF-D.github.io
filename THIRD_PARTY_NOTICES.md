@@ -12,3 +12,8 @@ The site includes Font Awesome Free font files for its profile and social icons.
 - Fonts: SIL OFL 1.1
 - Code: MIT License
 - License information: <https://fontawesome.com/license/free>
+
+## Marked
+
+The build uses Marked to convert authored Markdown blog posts to static HTML. Marked is licensed
+under the MIT License: <https://github.com/markedjs/marked/blob/master/LICENSE.md>

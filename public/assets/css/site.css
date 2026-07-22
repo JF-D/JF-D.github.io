@@ -750,6 +750,122 @@ hr {
   color: #62696e;
 }
 
+.empty-state {
+  color: #737a7f;
+}
+
+.blog-list {
+  margin: 1rem 0 2.5rem;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.blog-list__item {
+  margin: 0;
+  padding: 1rem 0.15rem 1.1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.blog-list__title {
+  margin: 0 0 0.2rem;
+  font-size: 1.1rem;
+  line-height: 1.35;
+}
+
+.blog-list__title a {
+  color: var(--paper-title);
+  text-decoration: none;
+}
+
+.blog-list__title a:hover {
+  color: var(--link);
+  text-decoration: underline;
+}
+
+.blog-list__date,
+.blog-post__date {
+  color: #737a7f;
+  font-size: 0.82rem;
+}
+
+.blog-list__summary {
+  max-width: 48rem;
+  margin: 0.45rem 0 0;
+  color: #62696e;
+}
+
+.blog-post__date {
+  margin: 0 0 1.5rem;
+}
+
+.blog-post__body {
+  max-width: 48rem;
+  line-height: 1.7;
+}
+
+.blog-post__body h2,
+.blog-post__body h3,
+.blog-post__body h4 {
+  margin-top: 1.8em;
+  scroll-margin-top: 5rem;
+}
+
+.blog-post__body img {
+  display: block;
+  max-width: 100%;
+  margin: 1.5rem auto;
+  border-radius: 4px;
+}
+
+.blog-post__body pre {
+  max-width: 100%;
+  padding: 1rem;
+  overflow-x: auto;
+  font-size: 0.84rem;
+  line-height: 1.55;
+  background: #f6f8fa;
+  border: 1px solid #e3e6e8;
+  border-radius: 4px;
+}
+
+.blog-post__body code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+
+.blog-post__body :not(pre) > code {
+  padding: 0.12rem 0.3rem;
+  font-size: 0.88em;
+  background: #f2f3f3;
+  border-radius: 3px;
+}
+
+.blog-post__body blockquote {
+  margin: 1.5rem 0;
+  padding-left: 1rem;
+  color: #62696e;
+  border-left: 3px solid var(--line-strong);
+}
+
+.blog-post__body table {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+
+.blog-post__body th,
+.blog-post__body td {
+  padding: 0.45rem 0.65rem;
+  text-align: left;
+  border: 1px solid #e3e6e8;
+}
+
+.blog-post__body th {
+  background: #f6f8fa;
+}
+
 .visitor-map {
   display: flex;
   justify-content: center;
