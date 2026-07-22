@@ -1,31 +1,75 @@
-A Github Pages template for academic websites. This was forked (then detached) by [Stuart Geiger](https://github.com/staeiou) from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/), which is © 2016 Michael Rose and released under the MIT License. See LICENSE.md.
+# Jiangfei Duan's Homepage
 
-I think I've got things running smoothly and fixed some major bugs, but feel free to file issues or make pull requests if you want to improve the generic template / theme.
+A zero-dependency static website generated with Node.js. There are no npm packages to install and no Ruby, Jekyll, framework, database, or container requirements.
 
-### Note: if you are using this repo and now get a notification about a security vulnerability, delete the Gemfile.lock file. 
+## Requirements
 
-# Instructions
+- Git
+- Node.js 24 LTS (`.nvmrc` pins the version)
 
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Fork [this repository](https://github.com/academicpages/academicpages.github.io) by clicking the "fork" button in the top right. 
-1. Go to the repository's settings (rightmost item in the tabs that start with "Code", should be below "Unwatch"). Rename the repository "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and create content & metadata (see below -- also see [this set of diffs](http://archive.is/3TPas) showing what files were changed to set up [an example site](https://getorg-testacct.github.io) for a user with the username "getorg-testacct")
-1. Upload any files (like PDFs, .zip files, etc.) to the files/ directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
-1. Check status by going to the repository settings, in the "GitHub pages" section
-1. (Optional) Use the Jupyter notebooks or python scripts in the `markdown_generator` folder to generate markdown files for publications and talks from a TSV file.
+`npm` is included with Node.js and is used only to run the local scripts.
 
-See more info at https://academicpages.github.io/
+## Local development
 
-## To run locally (not on GitHub Pages, to serve on your own computer)
+```bash
+nvm use
+npm run dev
+```
 
-1. Clone the repository and made updates as detailed above
-1. Make sure you have ruby-dev, bundler, and nodejs installed: `sudo apt install ruby-dev ruby-bundler nodejs`
-1. Run `bundle clean` to clean up the directory (no need to run `--force`)
-1. Run `bundle install` to install ruby dependencies. If you get errors, delete Gemfile.lock and try again.
-1. Run `bundle exec jekyll liveserve` to generate the HTML and serve it from `localhost:4000` the local server will automatically rebuild and refresh the pages on change.
+Open <http://localhost:4321/>. The development server rebuilds the site and refreshes the browser when files change.
 
-# Changelog -- bugfixes and enhancements
+To make the server reachable from another device on the same network:
 
-There is one logistical issue with a ready-to-fork template theme like academic pages that makes it a little tricky to get bug fixes and updates to the core theme. If you fork this repository, customize it, then pull again, you'll probably get merge conflicts. If you want to save your various .yml configuration files and markdown files, you can delete the repository and fork it again. Or you can manually patch. 
+```bash
+npm run dev -- --host 0.0.0.0
+```
 
-To support this, all changes to the underlying code appear as a closed issue with the tag 'code change' -- get the list [here](https://github.com/academicpages/academicpages.github.io/issues?q=is%3Aclosed%20is%3Aissue%20label%3A%22code%20change%22%20). Each issue thread includes a comment linking to the single commit or a diff across multiple commits, so those with forked repositories can easily identify what they need to patch.
+If Node was installed with Homebrew as `node@24`, add it to the current shell first:
+
+```bash
+export PATH="$(brew --prefix node@24)/bin:$PATH"
+```
+
+No `npm install` or `npm ci` step is required.
+
+## Content updates
+
+- Biography, news, education, experience, teaching, services, and awards: `src/content/home.html`
+- Blog page: `src/content/blog.html`
+- Publications: `src/data/publications.mjs`
+- Profile, top navigation, and social links: `src/data/site.mjs`
+- Styling: `public/assets/css/site.css`
+- PDFs and images: `public/files/` and `public/images/`
+
+Everything under `public/` is copied into the deployed site. Keep reference documents containing
+non-public information under `.private/`; that directory is ignored by Git and is never deployed.
+
+News and the internship group use native HTML `<details>` disclosures. Add the `open` attribute when
+a group should be expanded by default; remove it when the group should start collapsed.
+
+Each publication requires an ISO date in `YYYY-MM-DD` format. The build sorts regular publications
+by this field with the newest item first, so the array itself does not need to be manually reordered.
+Set `category: "survey"` to place a publication in the separate Survey section. Set `owner: true` on
+Jiangfei's author entry to bold the name, and add `equal: true` only when the paper explicitly marks
+that author as an equal contributor. To emphasize part of a venue inline, set `venue` to an object
+with `before`, `highlight`, and `after` strings instead of a single string.
+
+Generate the production site in `dist/`:
+
+```bash
+npm run build
+```
+
+Preview the production output without file watching:
+
+```bash
+npm run preview
+```
+
+## Deployment
+
+Pushing to `master` runs `.github/workflows/deploy.yml` and publishes the generated `dist/` directory to GitHub Pages. The workflow installs no npm packages. In the repository's **Settings > Pages**, set **Source** to **GitHub Actions** once; generated files do not need to be committed.
+
+## Attribution
+
+The visual design retains portions of the Minimal Mistakes theme by Michael Rose under the MIT License in `LICENSE`. The locally hosted social icon fonts are from Font Awesome Free 5.5.0; see `THIRD_PARTY_NOTICES.md`.
