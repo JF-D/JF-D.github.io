@@ -40,6 +40,7 @@ pinned Markdown build dependency.
 - Blog posts and their images: `src/blog/posts/`
 - Publications: `src/data/publications.mjs`
 - Profile, top navigation, and social links: `src/data/site.mjs`
+- Visitor map and counter: the `visitor-map` near the end of `src/content/home.html`
 - Styling: `public/assets/css/site.css`
 - PDFs and images: `public/files/` and `public/images/`
 
@@ -87,6 +88,13 @@ Write the body in `post.md`. The page title comes from `metadata.json`, so Markd
 
 Local images must remain inside the post directory. Only referenced images are copied to the generated
 site. Published posts are sorted newest-first; set `"draft": true` to keep a post out of the generated site.
+
+## Visitor statistics
+
+The homepage uses Flag Counter ID `dGvB` to display an aggregate country map and total page-view count.
+The counter is a lazy-loaded external image, so it adds no npm dependency or build step. Clicking the map
+opens the public country and region breakdown. Precise visitor addresses are not displayed. If the provider
+is replaced, update both URLs inside the `visitor-map` in `src/content/home.html`.
 
 Generate the production site in `dist/`:
 

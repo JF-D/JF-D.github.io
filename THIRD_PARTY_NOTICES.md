@@ -17,3 +17,8 @@ The site includes Font Awesome Free font files for its profile and social icons.
 
 The build uses Marked to convert authored Markdown blog posts to static HTML. Marked is licensed
 under the MIT License: <https://github.com/markedjs/marked/blob/master/LICENSE.md>
+
+## Flag Counter
+
+The homepage loads an aggregate visitor map and page-view counter from Flag Counter. The provider's
+privacy policy is available at <https://flagcounter.com/privacy.html>.

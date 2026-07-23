@@ -869,6 +869,26 @@ hr {
 .visitor-map {
   display: flex;
   justify-content: center;
+  margin: 3rem 0 0;
+}
+
+.visitor-map__link {
+  display: block;
+  max-width: 100%;
+  line-height: 0;
+  border-radius: 4px;
+}
+
+.visitor-map__link:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 3px;
+}
+
+.visitor-map__image {
+  display: block;
+  width: min(100%, 400px);
+  height: auto;
+  border-radius: 4px;
 }
 
 .page__footer {
