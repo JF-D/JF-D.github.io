@@ -4,7 +4,7 @@ export const site = {
   description:
     "Jiangfei Duan's research homepage, publications, experience, and curriculum vitae.",
   url: "https://jf-d.github.io",
-  location: "Hong Kong",
+  location: "California, U.S.",
   email: "imjfduan AT gmail.com",
   avatar: "/images/profile.png",
   resume: "/files/cv.pdf",
