@@ -1,5 +1,21 @@
 export const publications = [
   {
+    title: "Zepp: Accelerating Distributed MoE Serving under Relaxed Balance Constraints",
+    date: "2026-10-08",
+    authors: [
+      { name: "Chang Chen" },
+      { name: "Andrew Yang" },
+      { name: "Tiancheng Chen" },
+      { name: "Jiangfei Duan", owner: true },
+      { name: "Xinwei Qiang" },
+      { name: "Zhongkai Yu" },
+      { name: "Xiang Fang" },
+      { name: "Yufei Ding" },
+    ],
+    venue: "arXiv preprint, October 2026.",
+    links: [{ label: "Paper", href: "https://arxiv.org/abs/2610.11158" }],
+  },
+  {
     title:
       "CoCoQuant: Breaking the Bandwidth Wall via Co-Optimized Communication and Computation Quantization",
     date: "2026-07-06",
