@@ -262,7 +262,7 @@ function renderProfile() {
   return `<aside class="sidebar" aria-label="Author profile">
   <div itemscope itemtype="https://schema.org/Person">
     <div class="author__avatar">
-      <img src="${escapeHtml(site.avatar)}" alt="${escapeHtml(site.owner)}" width="512" height="512" itemprop="image" />
+      <img src="${escapeHtml(site.avatar)}" alt="${escapeHtml(site.owner)}" width="${site.avatarWidth}" height="${site.avatarHeight}" itemprop="image" />
     </div>
     <div class="author__content">
       <h2 class="author__name" itemprop="name">${escapeHtml(site.owner)}</h2>

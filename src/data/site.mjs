@@ -6,7 +6,9 @@ export const site = {
   url: "https://jf-d.github.io",
   location: "California, U.S.",
   email: "imjfduan AT gmail.com",
-  avatar: "/images/profile.png",
+  avatar: "/images/profile.jpeg",
+  avatarWidth: 805,
+  avatarHeight: 760,
   resume: "/files/cv.pdf",
   navigation: [
     { label: "About", href: "/", activeRoute: "/" },
