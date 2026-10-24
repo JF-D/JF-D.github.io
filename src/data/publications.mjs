@@ -65,8 +65,9 @@ export const publications = [
     links: [{ label: "Paper", href: "https://arxiv.org/abs/2509.21841" }],
   },
   {
-    title: "NanoCP: Request-Level Dynamic Context Parallelism for Data-Expert Parallel Decoding",
-    date: "2026-05-20",
+    title:
+      "NanoCP: Taming Load Imbalance in Data-Expert Parallel Decoding under Variable-Length Workloads",
+    date: "2027-04-11",
     authors: [
       { name: "Jiefei Chen" },
       { name: "Binbin Lin" },
@@ -81,7 +82,8 @@ export const publications = [
       { name: "Xingcheng Zhang" },
       { name: "Dahua Lin" },
     ],
-    venue: "arXiv preprint, May 2026.",
+    venue:
+      "In Proceedings of the ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS), April 2027.",
     links: [{ label: "Paper", href: "https://arxiv.org/abs/2605.21100" }],
   },
   {
